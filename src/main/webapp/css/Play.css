@@ -1,0 +1,298 @@
+@charset "UTF-8";
+
+/*------------------------------------------------------------------
+[1. GRID DEFINITION]
+*/
+.parent {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 70px 623px 150px 50px;
+	grid-template-areas: 
+		"nav-bar nav-bar"
+		"board-area list-moves"
+		"board-area move-form"
+		"footer footer"
+}
+
+/*------------------------------------------------------------------
+[2. NAV-BAR]
+*/
+.nav-bar {
+	grid-area: nav-bar;
+/* 	background: blue; */
+}
+
+/*------------------------------------------------------------------
+[3. BOARD-AREA]
+*/
+.board-area {
+    text-align: center;
+    grid-area: board-area;
+}
+
+#table {
+    position: relative;
+    width: 915px;
+    height: 728px;
+    display: table;
+	font-size: 2em;
+	border-radius: 20px;
+	background: #fff;
+    margin: 22.5px auto;
+	-webkit-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	-moz-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+    overflow: hidden;
+}
+
+#table div {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'consolas', monospace;
+}
+
+#table div .game-table {
+	margin: 0 auto;
+	border: collapse;
+}
+
+#table div .game-table td {
+	height: 75px;
+	width: 75px;
+}
+
+#table div .game-table .first-col,
+#table div .game-table thead th{
+	font-size: 0.6em;
+	font-style: italic;
+	font-weight: bold;
+	color: #8a97a0;
+	background: #fff;
+}
+
+#table div .game-table tbody tr td {
+	background-color: whitesmoke;
+}
+
+#table div .game-table tbody tr:nth-child(odd) td:nth-child(odd):not(.first-col) {
+	background-color: #e4e4ff;
+	-webkit-box-shadow: inset 0px 0px 5px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 0px 0px 5px -1px rgba(0,0,0,0.75);
+	box-shadow: inset 0px 0px 5px -1px rgba(0,0,0,0.75);
+}
+
+#table div .game-table tbody tr:nth-child(even) td:nth-child(even):not(.first-col) {
+	background-color: #e4e4ff;
+	-webkit-box-shadow: inset 0px 0px 5px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 0px 0px 5px -1px rgba(0,0,0,0.75);
+	box-shadow: inset 0px 0px 5px -1px rgba(0,0,0,0.75);
+}
+
+.white-piece {
+    color: #6170e2;
+}
+
+.black-piece {
+    color: black;
+}
+
+/*------------------------------------------------------------------
+[4. LIST-MOVES]
+*/
+.list-moves {
+    grid-area: list-moves;
+}
+
+.moves-table {
+	margin: 22.5px auto;
+	position: relative;
+	display: table;
+	border-collapse: collapse;
+	font-size: 0.9em;
+	width: 915px;
+	-webkit-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	-moz-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	font-size: 0.9em;
+	border-radius: 20px;
+	overflow: hidden;
+	background: #fff;
+}
+
+.moves-table thead {
+	display: table;
+	width: 100%;
+}
+
+.moves-table tbody {
+	display: block;
+	overflow: auto;
+	height: 535.75px;
+}
+.moves-table tr {
+	display: table;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.moves-table tr td {
+	cursor: pointer;
+}
+
+.moves-table thead tr {
+	background-color: #8a97ff;
+	color: #ffffff !important;
+	text-align: center;
+}
+
+.moves-table thead tr th[colspan="4"] {
+    text-align: center;
+}
+
+.moves-table thead tr th {
+	color: #fff !important;
+}
+
+.moves-table th, .moves-table td {
+	padding: 12px 15px;
+	width: 25%; /* to enable "word-break: break-all" */
+}
+
+.moves-table tbody tr {
+	border-bottom: 1px solid #dddddd;
+	background: #fff;
+	text-align: center !important;
+}
+
+/* .moves-table tbody tr:nth-of-type(even) { */
+/* 	background-color: #f3f3f3; */
+/* } */
+
+.moves-table tbody tr:hover {
+	background-color: #d3d3ff;
+}
+
+.moves-table tbody tr:last-of-type {
+	border-bottom: 2px solid #8a97ff;
+}
+
+/*------------------------------------------------------------------
+[5. MOVE-FORM]
+*/
+.move-form {
+    grid-area: move-form;
+}
+
+.move-form {
+	margin: 10px auto;
+	border-radius: 8px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+}
+
+.centered-form {
+	width: 915px;
+    height: 111px;
+	background: #fff;
+	-webkit-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	-moz-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	border-radius: 20px;
+}
+
+.centered-p {
+    display: table;
+	width: 915px;
+    height: 111px;
+	background: #fff;
+	-webkit-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	-moz-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	border-radius: 20px;
+}
+
+.centered-p p {
+    text-align:center; 
+    vertical-align: middle;
+    display: table-cell;
+    font-size: 1.2em;
+	font-weight: bold;
+	font-style: italic;
+	color: #8a97a0;
+	cursor: auto !important;
+}
+
+.move-form fieldset {
+	border-style: none;
+	width: 100%;
+}
+
+.move-form legend {
+	font-size: 1.4em;
+	margin-bottom: 10px;
+}
+
+.move-form input[type="submit"] {
+	padding: 10px;
+	color: #fff;
+	margin: 0 auto;
+	background: #8a97ff;
+	font-size: 15px;
+	text-align: center;
+	font-style: normal;
+	width: 20%;
+	margin-bottom: 10px;
+	border: none;
+	border-radius: 0 8px 8px 0;
+	-webkit-box-shadow: 0px 0px 17px 5px rgba(138, 151, 255, 1);
+	-moz-box-shadow: 0px 0px 17px 5px rgba(138, 151, 255, 1);
+	box-shadow: 0px 0px 17px 5px rgba(138, 151, 255, 1);
+	cursor: pointer !important;
+}
+
+.move-form input[type="text"] {
+	background: rgba(255, 255, 255, .1);
+	border: none;
+	border-radius: 8px 0 0 8px;
+	font-size: 15px;
+	margin: 0;
+	outline: 0;
+	padding: 10px;
+	width: 70%;
+	box-sizing: border-box;
+	-moz-boz-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	background-color: #e8eeef;
+	color: #8a97a0;
+	-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+	margin-bottom: 10px;
+}
+
+.move-form input[type="text"]:focus {
+	background: #d2d9dd;
+}
+
+.move-form .eyecandy {
+	background: #8a97ff;
+	color: #fff;
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+	font-size: 0.8em;
+	margin-right: 4px;
+	line-height: 30px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+	border-radius: 15px 15px 15px 0px;
+}
+
+/*------------------------------------------------------------------
+[6. FOOTER]
+*/
+.footer {
+    grid-area: footer;
+}

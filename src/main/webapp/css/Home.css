@@ -1,0 +1,318 @@
+@charset "UTF-8";
+
+/*------------------------------------------------------------------
+[1. GRID DEFINITION]
+*/
+.parent {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 70px 623px 150px 50px;
+	grid-template-areas: 
+		"nav-bar nav-bar"
+		"active-games list-players"
+		"active-games challenge-form"
+		"footer footer"
+}
+
+/*------------------------------------------------------------------
+[2. NAV-BAR]
+*/
+.nav-bar {
+	grid-area: nav-bar;
+/* 	background: blue; */
+}
+
+/*------------------------------------------------------------------
+[3. ACTIVE GAMES]
+*/
+.active-games {
+	grid-area: active-games;
+/* 	background: green; */
+}
+
+.styled-table {
+	margin: 22.5px auto;
+	position: relative;
+	display: table;
+	border-collapse: collapse;
+	width: 915px;
+	-webkit-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	-moz-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	font-size: 0.9em;
+	border-radius: 20px;
+	overflow: hidden;
+	background: #fff;
+}
+
+.styled-table thead {
+	display: table;
+	width: 100%;
+}
+
+.styled-table tbody {
+	display: block;
+	overflow: auto;
+	height: 683.75px;
+}
+
+.styled-table tr {
+	display: table;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.styled-table tr td{
+	cursor: pointer;
+}
+
+.styled-table thead tr {
+	background-color: #8a97ff;
+	color: #ffffff !important;
+	text-align: center;
+}
+
+.styled-table thead tr th[colspan="5"] {
+    text-align: center;
+}
+
+.styled-table thead tr th {
+	color: #fff !important;
+}
+
+.styled-table th, .styled-table td {
+	padding: 12px 15px;
+	width: 25%; /* to enable "word-break: break-all" */
+}
+
+.styled-table tbody tr {
+	border-bottom: 1px solid #dddddd;
+	background: #fff;
+	text-align: center !important;
+}
+
+/* .styled-table tbody tr:nth-of-type(even) { */
+/* 	background-color: #f3f3f3; */
+/* } */
+
+.styled-table tbody tr:hover {
+	background-color: #d3d3ff;
+}
+
+.styled-table tbody tr:last-of-type {
+	border-bottom: 2px solid #8a97ff;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+a:visited {
+	color: inherit !important;
+}
+
+#opp-turn a {
+	color: #a54657 !important;
+	font-weight: bold !important;
+}
+
+#your-turn a {
+	color: #8093f1 !important;
+	font-weight: bold !important;
+}
+
+#empty-row {
+	height: 683.75px;
+}
+
+#empty-row:hover {
+	background-color: #fff;
+}
+
+#empty-data {
+	font-weight: bold;
+	font-style: italic;
+	color: #8a97a0;
+	cursor: auto !important;
+}
+
+/*------------------------------------------------------------------
+[4. CHALLENGE FORM]
+*/
+.challenge-form {
+	grid-area: challenge-form;
+/* 	background: orange; */
+}
+
+.challenger {
+	margin: 10px auto;
+	border-radius: 8px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+}
+
+.centered-form {
+	width: 915px;
+	background: #fff;
+	-webkit-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	-moz-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	border-radius: 20px;
+}
+
+.challenger fieldset {
+	border-style: none;
+	width: 100%;
+}
+
+.challenger legend {
+	font-size: 1.4em;
+	margin-bottom: 10px;
+}
+
+.challenger input[type="submit"] {
+	padding: 10px;
+	color: #fff;
+	margin: 0 auto;
+	background: #8a97ff;
+	font-size: 15px;
+	text-align: center;
+	font-style: normal;
+	width: 20%;
+	margin-bottom: 10px;
+	border: none;
+	border-radius: 0 8px 8px 0;
+	-webkit-box-shadow: 0px 0px 17px 5px rgba(138, 151, 255, 1);
+	-moz-box-shadow: 0px 0px 17px 5px rgba(138, 151, 255, 1);
+	box-shadow: 0px 0px 17px 5px rgba(138, 151, 255, 1);
+	cursor: pointer !important;
+}
+
+.challenger input[type="email"] {
+	background: rgba(255, 255, 255, .1);
+	border: none;
+	border-radius: 8px 0 0 8px;
+	font-size: 15px;
+	margin: 0;
+	outline: 0;
+	padding: 10px;
+	width: 70%;
+	box-sizing: border-box;
+	-moz-boz-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	background-color: #e8eeef;
+	color: #8a97a0;
+	-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+	margin-bottom: 10px;
+}
+
+.challenger input[type="email"]:focus {
+	background: #d2d9dd;
+}
+
+.challenger .eyecandy {
+	background: #8a97ff;
+	color: #fff;
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+	font-size: 0.8em;
+	margin-right: 4px;
+	line-height: 30px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+	border-radius: 15px 15px 15px 0px;
+}
+
+/*------------------------------------------------------------------
+[5. LIST PLAYERS]
+*/
+.list-players {
+	grid-area: list-players;
+/* 	background: red; */
+}
+
+.players-table {
+	margin: 22.5px auto;
+	position: relative;
+	display: table;
+	border-collapse: collapse;
+	font-size: 0.9em;
+	width: 915px;
+	-webkit-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	-moz-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	font-size: 0.9em;
+	border-radius: 20px;
+	overflow: hidden;
+	background: #fff;
+}
+
+.players-table thead {
+	display: table;
+	width: 100%;
+}
+
+.players-table tbody {
+	display: block;
+	overflow: auto;
+	height: 535.75px;
+}
+.players-table tr {
+	display: table;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.players-table tr td {
+	cursor: pointer;
+}
+
+.players-table thead tr {
+	background-color: #8a97ff;
+	color: #ffffff !important;
+	text-align: center;
+}
+
+.players-table thead tr th[colspan="4"] {
+    text-align: center;
+}
+
+.players-table thead tr th {
+	color: #fff !important;
+}
+
+.players-table th, .players-table td {
+	padding: 12px 15px;
+	width: 25%; /* to enable "word-break: break-all" */
+}
+
+.players-table tbody tr {
+	border-bottom: 1px solid #dddddd;
+	background: #fff;
+	text-align: center !important;
+}
+
+/* .players-table tbody tr:nth-of-type(even) { */
+/* 	background-color: #f3f3f3; */
+/* } */
+
+.players-table tbody tr:hover {
+	background-color: #d3d3ff;
+}
+
+.players-table tbody tr:last-of-type {
+	border-bottom: 2px solid #8a97ff;
+}
+
+/*------------------------------------------------------------------
+[6. FOOTER]
+*/
+.footer {
+	grid-area: footer;
+/* 	background: gray; */
+}

@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+/*------------------------------------------------------------------
+[1. GRID DEFINITION]
+*/
+.parent {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 626.5px 266.5px;
+	grid-template-areas: 
+		"form-style"
+		"footer"
+}
+
+.form-style {
+	grid-area: form-style;
+    width: 500px;
+    height: 400px;
+    padding: 10px 20px;
+    background: #fff;
+    margin: 126.5px auto 0px auto;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+	-webkit-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	-moz-box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+	box-shadow: 0px 0px 17px -8px rgba(0,0,0,0.68);
+}
+
+.form-style fieldset {
+    border: none;
+}
+
+.form-style legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.form-style label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-style input[type="text"], .form-style input[type="email"] {
+    background: rgba(255, 255, 255, .1);
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    margin: 0;
+    outline: 0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-boz-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: #e8eeef;
+    color: #8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    margin-bottom: 30px;
+}
+
+.form-style input[type="text"]:focus, .form-style input[type="email"]:focus
+    {
+    background: #d2d9dd;
+}
+
+.form-style .eyecandy {
+    background: #8a97ff;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 15px 15px 15px 0px;
+}
+
+.form-style input[type="submit"] {
+    position: relative;
+    display: block;
+    padding: 19px 39px 18px 39px;
+    color: #fff;
+    margin: 0 auto;
+    background: #8a97ff;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 70%;
+    border: 0px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0px 0px 17px 5px rgba(138, 151, 255, 1);
+    -moz-box-shadow: 0px 0px 17px 5px rgba(138, 151, 255, 1);
+    box-shadow: 0px 0px 17px 5px rgba(138, 151, 255, 1);
+    cursor: pointer;
+}
+
+a, a:visited {
+    color: #ff5555 !important;
+}
+
+.footer {
+	grid-area: footer;
+}
